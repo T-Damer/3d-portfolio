@@ -6,7 +6,7 @@ Built with _three.js_ and _Vite_
 
 # Demo
 
-![demo](template-demo.gif)
+![demo](demo.gif)
 
 ---
 

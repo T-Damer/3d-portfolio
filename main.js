@@ -65,6 +65,39 @@ function addStar() {
 
 Array(200).fill().forEach(addStar)
 
+const spaceTexture = new THREE.TextureLoader().load(
+  'space.png'
+)
+scene.background = spaceTexture
+
+// Avatar
+const boxTexture = new THREE.TextureLoader().load(
+  'avatar.png'
+)
+const avatar = new THREE.Mesh(
+  new THREE.BoxGeometry(3, 3, 3),
+  new THREE.MeshBasicMaterial({ map: boxTexture })
+)
+scene.add(avatar)
+
+// Moon
+const moonTexture = new THREE.TextureLoader().load(
+  'moon.png'
+)
+const moonNormal = new THREE.TextureLoader().load(
+  'moon_normal.png'
+)
+
+const moon = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: moonTexture,
+    normalMap: moonNormal,
+  })
+)
+
+scene.add(moon)
+
 function animate() {
   requestAnimationFrame(animate)
 
