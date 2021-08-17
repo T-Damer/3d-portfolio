@@ -98,6 +98,23 @@ const moon = new THREE.Mesh(
 moon.position.set(30, 30, 30)
 scene.add(moon)
 
+function moveCamera() {
+  const scrollPos =
+    document.body.getBoundingClientRect().top // How far away from top
+  moon.rotation.x += 0.05
+  moon.rotation.y += 0.075
+  moon.rotation.z += 0.05
+
+  avatar.rotation.y += 0.01
+  avatar.rotation.z += 0.01
+
+  camera.position.x = scrollPos * -0.0002
+  camera.position.y = scrollPos * -0.0002
+  camera.position.z = scrollPos * -0.01
+}
+
+document.body.onscroll = moveCamera
+
 function animate() {
   requestAnimationFrame(animate)
 
