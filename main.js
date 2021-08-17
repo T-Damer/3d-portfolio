@@ -82,7 +82,7 @@ scene.add(avatar)
 
 // Moon
 const moonTexture = new THREE.TextureLoader().load(
-  'moon.png'
+  'moon.jpg'
 )
 const moonNormal = new THREE.TextureLoader().load(
   'moon_normal.png'
@@ -95,7 +95,7 @@ const moon = new THREE.Mesh(
     normalMap: moonNormal,
   })
 )
-
+moon.position.set(30, 30, 30)
 scene.add(moon)
 
 function animate() {
