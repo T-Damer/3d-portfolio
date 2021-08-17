@@ -35,10 +35,6 @@ pointLight.position.set(20, 20, 20)
 const ambientLight = new THREE.AmbientLight(0xffffff)
 scene.add(pointLight, ambientLight)
 
-const lightHelper = new THREE.PointLightHelper(pointLight)
-const gridHelper = new THREE.GridHelper(200, 50)
-scene.add(lightHelper, gridHelper)
-
 const controls = new OrbitControls(
   camera,
   renderer.domElement
@@ -95,7 +91,7 @@ const moon = new THREE.Mesh(
     normalMap: moonNormal,
   })
 )
-moon.position.set(30, 30, 30)
+moon.position.set(-10, 0, 30)
 scene.add(moon)
 
 function moveCamera() {
